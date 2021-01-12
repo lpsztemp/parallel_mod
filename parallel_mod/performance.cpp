@@ -15,6 +15,7 @@ std::vector<measurement> run_experiments()
 	results.reserve(std::thread::hardware_concurrency());
 	for (unsigned T = 1; T <= std::thread::hardware_concurrency(); ++T)
 	{
+		set_num_threads(T);
 		using namespace std::chrono;
 		auto tm0 = steady_clock::now();
 		auto result = vector_mod(data.get(), word_count, divisor);

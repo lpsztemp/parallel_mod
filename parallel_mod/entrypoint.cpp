@@ -3,10 +3,12 @@
 #include "performance.h"
 #include <iostream>
 #include <iomanip>
+#include "num_threads.h"
 
 int main(int argc, char** argv)
 {
 	std::cout << "==Correctness tests. ";
+	//set_num_threads(1);
 	for (std::size_t iTest = 0; iTest < test_data_count; ++iTest)
 	{
 		if (test_data[iTest].result != vector_mod(test_data[iTest].dividend, test_data[iTest].dividend_size, test_data[iTest].divisor))
